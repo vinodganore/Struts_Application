@@ -1,0 +1,26 @@
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="userform" type="com.vinod.ganore.bean.UserForm"/> 
+		<form-bean name="newuserformlogin" type="com.vinod.ganore.bean.NewUserForm"/>
+		<form-bean name="newUserInformDetails" type="com.vinod.ganore.bean.NewUserForm"/>
+	</form-beans>
+	<global-exceptions>  
+	</global-exceptions> 
+	<action-mappings>
+		<action name="userform" path="/Login" type="com.vinod.ganore.action.UserAction">
+			<forward name="success" path="/Success1.jsp"></forward>
+			<forward name="failure" path="/Failure.jsp"></forward>
+		</action>
+		<action name="newuserformlogin" path="/NewUserLogin" type="com.vinod.ganore.action.NewUserLoginAction">
+			<forward name="inserted" path="/Acknowledge.jsp"></forward>
+			<forward name="notinserted" path="/Failure.jsp"></forward>
+		</action>
+		 <action name="newUserInformDetails" path="/UserInfor" type="com.vinod.ganore.action.NewUserInformation">
+			<forward name="success" path="/Success.jsp"></forward>
+			<forward name="failure" path="/Failure.jsp"></forward>
+		</action> 
+	</action-mappings>
+</struts-config>
